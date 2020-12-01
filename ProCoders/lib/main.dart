@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'blocs/feed_bloc/feed_bloc.dart';
+import 'feed_bloc/feed_bloc.dart';
 import 'navigation/routes.dart';
 import 'navigation/screens.dart';
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         ],
         child: MaterialApp(
           title: 'TestTask',
-          initialRoute: Screens.walletsList,
+          initialRoute: Screens.feed,
           routes: appRoutes,
         ));
   }

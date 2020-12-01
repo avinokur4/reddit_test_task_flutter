@@ -1,3 +1,3 @@
 class Screens {
-  static const String walletsList = 'WalletsList';
+  static const String feed = 'Feed';
 }
