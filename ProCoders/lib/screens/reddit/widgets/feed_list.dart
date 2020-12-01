@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../blocs/feed_bloc/feed_bloc.dart';
+import '../../../feed_bloc/feed_bloc.dart';
 import '../widgets/no_data.dart';
 import './feed_item.dart';
 import '../actions.dart';
