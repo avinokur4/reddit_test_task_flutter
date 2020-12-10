@@ -7,21 +7,21 @@ import '../services/feed_service.dart';
 part 'feed_event.dart';
 part 'feed_state.dart';
 
-class WalletsListBloc extends Bloc<WalletsListEvent, WalletsListState> {
-  WalletsListBloc() : super(WalletsListInitial());
+class FeedListBloc extends Bloc<FeedListEvent, FeedListState> {
+  FeedListBloc() : super(FeedListInitial());
 
-  Map<String, dynamic> walletsList;
-  final IWalletsListService walletsListService = WalletsListService();
+  Map<String, dynamic> feed;
+  final IFeedService feedService = FeedService();
 
   @override
-  Stream<WalletsListState> mapEventToState(
-    WalletsListEvent event,
+  Stream<FeedListState> mapEventToState(
+    FeedListEvent event,
   ) async* {
-    if (event is FetchWalletsEvent) {
-      walletsList = await walletsListService.fetchWalletsList('/r/FlutterDev.json');
+    if (event is FetchFeedEvent) {
+      feed = await feedService.fetchFeed('/r/FlutterDev.json');
 
-      yield GetWalletsListState(
-        walletsList: walletsList,
+      yield GetFeedState(
+        feed: feed,
       );
     }
   }

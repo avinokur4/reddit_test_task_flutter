@@ -10,16 +10,19 @@ class FeedList extends StatelessWidget with FeedActions {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<WalletsListBloc, WalletsListState>(
+    return BlocBuilder<FeedListBloc, FeedListState>(
       builder: (context, state) {
-        if (state is GetWalletsListState) {
-          final wallets = state.walletsList['children'] as List<Map<String, dynamic>>;
-          if (state.walletsList.isNotEmpty) {
+        if (state is GetFeedState) {
+          final feed = state.feed['children'] as List<dynamic>;
+          if (state.feed.isNotEmpty) {
             return ListView.builder(
                 padding: const EdgeInsets.only(top: 0),
-                itemCount: state.walletsList.length,
+                itemCount: state.feed.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return FeedItem(wallets[index]['data']['title'], wallets[index]['data']['selftext']);
+                  final feedItem = feed[index]['data'] as Map<String, dynamic>;
+                  final title = feedItem['title'];
+                  final selftext = feedItem['selftext'];
+                  return FeedItem(title, selftext);
                 });
           } else {
             return NoData();

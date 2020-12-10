@@ -1,18 +1,18 @@
 part of 'feed_bloc.dart';
 
-abstract class WalletsListState extends Equatable {
-  const WalletsListState();
+abstract class FeedListState extends Equatable {
+  const FeedListState();
 }
 
-class WalletsListInitial extends WalletsListState {
+class FeedListInitial extends FeedListState {
   @override
   List<Object> get props => [];
 }
 
-class GetWalletsListState extends WalletsListState {
-  const GetWalletsListState({this.walletsList});
-  final Map<String, dynamic> walletsList;
+class GetFeedState extends FeedListState {
+  const GetFeedState({this.feed});
+  final Map<String, dynamic> feed;
 
   @override
-  List<Object> get props => [walletsList];
+  List<Object> get props => [feed];
 }

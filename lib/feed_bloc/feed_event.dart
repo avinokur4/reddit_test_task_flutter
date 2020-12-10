@@ -1,11 +1,11 @@
 part of 'feed_bloc.dart';
 
-abstract class WalletsListEvent extends Equatable {
-  const WalletsListEvent();
+abstract class FeedListEvent extends Equatable {
+  const FeedListEvent();
 }
 
-class FetchWalletsEvent extends WalletsListEvent {
-  const FetchWalletsEvent();
+class FetchFeedEvent extends FeedListEvent {
+  const FetchFeedEvent();
   @override
   List<Object> get props => null;
 }

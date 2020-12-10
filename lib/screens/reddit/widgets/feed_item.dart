@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FeedItem extends StatelessWidget {
-  const FeedItem(this.item, this.selfText);
+  const FeedItem(this.title, this.selfText);
 
-  final dynamic item;
+  final String title;
   final String selfText;
 
   @override
   Widget build(BuildContext context) {
-
     return GestureDetector(
       onTap: () => {},
       child: Container(
@@ -21,30 +20,17 @@ class FeedItem extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              height: 112,
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               child: Container(
-                alignment: Alignment.center,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              item?.title,
-                            ),
-                            Text(
-                              item.selfText,
-                            ),
-                          ],
-                        ),
-                      ],
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text(
+                      title,
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      selfText,
                     ),
                   ],
                 ),

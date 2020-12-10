@@ -3,19 +3,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../feed_bloc/feed_bloc.dart';
 
 import 'widgets/feed_list.dart';
+import 'widgets/no_data.dart';
 
 class Feed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    return BlocBuilder<WalletsListBloc, WalletsListState>(
+    return BlocBuilder<FeedListBloc, FeedListState>(
       builder: (context, state) {
-        if (state is GetWalletsListState) {
+        if (state is GetFeedState) {
           return Scaffold(
-            body: FeedList(),
+            body: SafeArea(child: FeedList()),
           );
         } else {
-          return null;
+          return Scaffold(
+            body: NoData(),
+          );
         }
       },
     );
